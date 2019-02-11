@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.night.dagger2demo.dagger.Cloth
 import com.night.dagger2demo.dagger.DaggerMainComponent
+import com.night.dagger2demo.dagger.Shoe
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 import javax.inject.Named
@@ -34,6 +35,8 @@ class MainActivity : AppCompatActivity() {
     @field:Named("blue")
     lateinit var blueCloth: Cloth
 
+    @Inject
+    lateinit var mShoe: Shoe
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,6 +45,6 @@ class MainActivity : AppCompatActivity() {
         //依赖注入
         DaggerMainComponent.builder().build().inject(this)
 
-        tv_cloth.text = "I have $redCloth and $blueCloth"
+        tv_cloth.text = "I have $redCloth and $blueCloth, I also have $mShoe"
     }
 }
