@@ -16,6 +16,8 @@ import javax.inject.Named
  * <p>作用：
  * <p>描述：依赖注入
  *
+ * 使用注解，不需要实例化对象，就可以拿到对象实例
+ *
  * Dagger2依赖注入的方式
  *
  * 方式1：使用依赖注入的类添加Inject注解构造函数 + Component声名要注入的类
