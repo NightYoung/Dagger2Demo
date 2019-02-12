@@ -1,4 +1,4 @@
-package com.night.dagger2demo.dagger
+package com.night.dagger2demo.cloth
 
 /**
  * <p>作者：Night  2019/1/30 16:47

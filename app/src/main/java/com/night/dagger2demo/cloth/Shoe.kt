@@ -1,4 +1,4 @@
-package com.night.dagger2demo.dagger
+package com.night.dagger2demo.cloth
 
 import javax.inject.Inject
 

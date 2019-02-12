@@ -1,4 +1,4 @@
-package com.night.dagger2demo.dagger
+package com.night.dagger2demo.cloth
 
 import com.night.dagger2demo.MainActivity
 import dagger.Component

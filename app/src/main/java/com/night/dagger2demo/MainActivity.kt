@@ -3,9 +3,10 @@ package com.night.dagger2demo
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import com.night.dagger2demo.dagger.Cloth
-import com.night.dagger2demo.dagger.DaggerMainComponent
-import com.night.dagger2demo.dagger.Shoe
+import com.night.dagger2demo.car.Car
+import com.night.dagger2demo.cloth.Cloth
+import com.night.dagger2demo.cloth.DaggerMainComponent
+import com.night.dagger2demo.cloth.Shoe
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 import javax.inject.Named
@@ -16,6 +17,11 @@ import javax.inject.Named
  * <p>邮箱：codinghuang@163.com
  * <p>作用：
  * <p>描述：依赖注入
+ *
+ * 构造方法依赖注入
+ * set方法依赖注入
+ * 使用接口依赖注入
+ * 基于注解依赖注入
  *
  * 使用注解，不需要实例化对象，就可以拿到对象实例
  *
@@ -38,6 +44,9 @@ class MainActivity : AppCompatActivity() {
     @Inject
     lateinit var mShoe: Shoe
 
+    @Inject
+    lateinit var mCar: Car
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -45,6 +54,6 @@ class MainActivity : AppCompatActivity() {
         //依赖注入
         DaggerMainComponent.builder().build().inject(this)
 
-        tv_cloth.text = "I have $redCloth and $blueCloth, I also have $mShoe"
+        tv_cloth.text = "I have $redCloth and $blueCloth, I also have $mShoe; I have a $mCar"
     }
 }
