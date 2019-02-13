@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.night.dagger2demo.car.Car
+import com.night.dagger2demo.car.Friend
 import com.night.dagger2demo.cloth.Cloth
 import com.night.dagger2demo.cloth.DaggerMainComponent
 import com.night.dagger2demo.cloth.Shoe
@@ -44,8 +45,8 @@ class MainActivity : AppCompatActivity() {
     @Inject
     lateinit var mShoe: Shoe
 
-    @Inject
     lateinit var mCar: Car
+        @Inject set
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,5 +56,7 @@ class MainActivity : AppCompatActivity() {
         DaggerMainComponent.builder().build().inject(this)
 
         tv_cloth.text = "I have $redCloth and $blueCloth, I also have $mShoe; I have a $mCar"
+
+        Friend().goSightseeing()
     }
 }

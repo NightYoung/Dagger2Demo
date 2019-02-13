@@ -14,6 +14,7 @@ import dagger.Provides
 class CarModule {
 
     @Provides
+    @ActivityScope
     fun provideCar(): Car {
 
         return Car()

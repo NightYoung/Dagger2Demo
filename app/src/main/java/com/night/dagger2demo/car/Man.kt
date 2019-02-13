@@ -1,5 +1,6 @@
 package com.night.dagger2demo.car
 
+import dagger.Lazy
 import javax.inject.Inject
 
 /**
@@ -12,16 +13,21 @@ import javax.inject.Inject
  */
 class Man {
 
-    @Inject
+    @ManScope
     lateinit var mCar: Car
+        @Inject set
 
-    val car by lazy {
-
-    }
+    @Inject
+    lateinit var lazyCar: Lazy<Car>
 
     init {
         DaggerManComponent.create().injectMan(this)
     }
 
     override fun toString(): String = "I have a $mCar"
+
+    fun goWork() {
+        //获取car实例
+        lazyCar.get().go()
+    }
 }

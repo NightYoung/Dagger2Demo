@@ -15,5 +15,9 @@ class Car @Inject constructor() {
         Log.d("hsc", "Car 初始化")
     }
 
+    fun go() {
+        println("This car is going to go ......")
+    }
+
     override fun toString() = "Car"
 }
