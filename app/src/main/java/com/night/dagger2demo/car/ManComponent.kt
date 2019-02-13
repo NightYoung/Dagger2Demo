@@ -20,4 +20,6 @@ interface ManComponent {
 
     //必须向外提供 car 依赖实例的接口，表明 Man 可以借 car 给别人
     fun car(): Car
+
+    fun sonComponent(): SonComponent.Builder
 }
